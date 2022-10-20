@@ -8,6 +8,26 @@ export function HomeScreen() {
   const sx = useSx()
   const {replace} = useRouter()
 
+  useEffect(()=> {
+    replace('/user/hello')
+  }, [replace])
+
+
+  /*
+  // Redirect to login if no user is present
+
+  const {user, isLoading} = useUser()
+  useEffect(()=> {
+    if (!isLoading && !user) {
+      replace('/login')
+    }
+  }, [replace, user, isLoading]);
+
+  if(isLoading) {
+    return <P>Loading...</P>
+  }
+  */
+
   return (
     <View
       sx={{ flex: 1, justifyContent: 'center', alignItems: 'center', p: 16 }}
